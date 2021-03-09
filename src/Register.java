@@ -6,9 +6,7 @@ import java.sql.Statement;
 public class Register {
 
     public boolean userregister(String id,String password,String email){
-
         boolean b = false;
-
         String sql = "select * from login where name='"+id+"'";
 
         try{

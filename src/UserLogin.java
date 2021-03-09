@@ -26,7 +26,7 @@ public class UserLogin {
             e.printStackTrace();
             System.out.println(e);
         }
-        if(isValid){//判断用户名以及密码是否与设定相符
+        if(isValid){
             return true;
         }
         else return false;

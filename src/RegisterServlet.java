@@ -21,8 +21,9 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
 
         String result = "";
-        b=myPOJO.userregister(id,password,email);//连接数据库，插入该用户信息
-        PrintWriter out = response.getWriter();//回应请求
+        // Connect to database and insert user info
+        b=myPOJO.userregister(id,password,email);
+        PrintWriter out = response.getWriter();
         if(b){
             result = "success";
         }
