@@ -6,21 +6,63 @@
 
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>LoginServlet</servlet-class>
+        <servlet-class>Servlet.LoginServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/LoginServlet.do</url-pattern>
+        <url-pattern>/Servlet.LoginServlet.do</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>RegisterServlet</servlet-class>
+        <servlet-class>Servlet.RegisterServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/RegisterServlet.do</url-pattern>
+        <url-pattern>/Servlet.RegisterServlet.do</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>Servlet.OrderServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>OrderServlet</servlet-name>
+        <url-pattern>/Servlet.OrderServlet.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DishServlet</servlet-name>
+        <servlet-class>Servlet.DishServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DishServlet</servlet-name>
+        <url-pattern>/Servlet.DishServlet.do</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>StoreServlet</servlet-name>
+        <servlet-class>Servlet.StoreServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StoreServlet</servlet-name>
+        <url-pattern>/Servlet.StoreServlet.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EventServlet</servlet-name>
+        <servlet-class>Servlet.EventServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EventServlet</servlet-name>
+        <url-pattern>/Servlet.EventServlet.do</url-pattern>
+    </servlet-mapping>
+
 </web-app>

@@ -7,10 +7,22 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  This is BU server!
-  </body>
+<head>
+  <title>Page Title</title>
+  <style>
+    body {
+      background-color: black;
+      text-align: center;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<h1>This is SherEats Server</h1>
+<h1>CS 557 Final Project</h1>
+
+<img src="Sher.jpg" width="800" alt="Avatar">
+
+</body>
 </html>
