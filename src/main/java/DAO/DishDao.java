@@ -26,12 +26,12 @@ public class DishDao {
     }
 
     /**
-     * getDish: get dish info by store id
+     * getDish: get dish info by restaurants id
      * @return jsonResult: result
      */
     public String getDishById(int id){
         String jsonResult = "";
-        String sql = "select * from items where store_id = '"+id+"'";
+        String sql = "select * from items where restaurant_id = '"+id+"'";
 
         try{
             jsonResult = ConnectionUtil.getConnectionResult(sql, BasicConfig.executeQuery);

@@ -46,13 +46,13 @@
 
 
     <servlet>
-        <servlet-name>StoreServlet</servlet-name>
-        <servlet-class>Servlet.StoreServlet</servlet-class>
+        <servlet-name>RestaurantServlet</servlet-name>
+        <servlet-class>Servlet.RestaurantServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>StoreServlet</servlet-name>
-        <url-pattern>/Servlet.StoreServlet.do</url-pattern>
+        <servlet-name>RestaurantServlet</servlet-name>
+        <url-pattern>/Servlet.RestaurantServlet.do</url-pattern>
     </servlet-mapping>
 
     <servlet>

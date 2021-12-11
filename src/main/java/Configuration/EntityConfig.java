@@ -8,7 +8,7 @@ public class EntityConfig {
 
     public static final String ORDER_ID = "order_id";
     public static final String USER_ID = "user_id";
-    public static final String STORE_ID = "store_id";
+    public static final String STORE_ID = "restaurant_id";
     public static final String ITEM_ID = "item_id";
     public static final String EVENT_ID = "event_id";
 

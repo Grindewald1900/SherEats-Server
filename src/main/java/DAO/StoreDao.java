@@ -8,12 +8,12 @@ import Utils.ConnectionUtil;
  */
 public class StoreDao {
     /**
-     * getDish: get store info
+     * getDish: get restaurants info
      * @return jsonResult: result
      */
     public String getStore(){
         String jsonResult = "";
-        String sql = "select * from stores";
+        String sql = "select * from restaurants";
 
         try{
             jsonResult = ConnectionUtil.getConnectionResult(sql, BasicConfig.executeQuery);
@@ -26,12 +26,12 @@ public class StoreDao {
     }
 
     /**
-     * getDish: get store info by id
+     * getDish: get restaurants info by id
      * @return jsonResult: result
      */
     public String getStoreById(int id){
         String jsonResult = "";
-        String sql = "select * from stores where store_id = '"+id+"' ";
+        String sql = "select * from restaurants where restaurant_id = '"+id+"' ";
 
         try{
             jsonResult = ConnectionUtil.getConnectionResult(sql, BasicConfig.executeQuery);

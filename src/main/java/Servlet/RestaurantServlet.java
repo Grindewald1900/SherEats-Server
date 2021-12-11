@@ -13,12 +13,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Servlet.StoreServlet: a servlet deal with user login
+ * Servlet.RestaurantServlet: a servlet deal Restaurant
  */
-@WebServlet(name = "Servlet.StoreServlet")
-public class StoreServlet extends HttpServlet {
+@WebServlet(name = "Servlet.RestaurantServlet")
+public class RestaurantServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("Servlet.StoreServlet");
+        System.out.println("Servlet.RestaurantServlet");
         // The result to be return
         String result = "";
         boolean isSuccess;

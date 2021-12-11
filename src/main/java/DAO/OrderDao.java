@@ -12,15 +12,15 @@ public class OrderDao {
      * @param sequenceId: inner id in a certain order
      * @param orderId: order id
      * @param userId: the user who placed this order
-     * @param storeId: the store that provide the dish
+     * @param restaurantId: the restaurant that provide the dish
      * @param time: upload time
      * @param itemId: dish id
      * @param amount: amount
      * @return if successful
      */
-    public boolean addOrder(int sequenceId, int orderId, int userId, int storeId, java.sql.Date time, int itemId, int amount){
+    public boolean addOrder(int sequenceId, int orderId, int userId, int restaurantId, java.sql.Date time, int itemId, int amount){
         boolean isValid = true;
-        String sql = "insert into orders values('"+sequenceId+"','"+orderId+"','"+userId+"','"+storeId+"','"+time+"','"+itemId+"','"+amount+"')";
+        String sql = "insert into orders values('"+sequenceId+"','"+orderId+"','"+userId+"','"+restaurantId+"','"+time+"','"+itemId+"','"+amount+"')";
 
         try{
             ConnectionUtil.getConnectionResult(sql, BasicConfig.executeUpdate);
