@@ -1,4 +1,4 @@
-DROP table users, stores, items, orders, user_events;
+DROP table users, restaurants, items, orders;
 
 create table users(
 	user_id int not null,
@@ -13,26 +13,23 @@ create table users(
 	unique(user_name)
 );
 
-create table stores(
-	store_id int not null,
-	store_name varchar(20) not null,
-	store_password varchar(40),
-	store_address varchar(100) not null,
-	store_genre varchar(20),
-	store_average float,
-	store_tel varchar(12) not null,
-	store_lat float not null,
-	store_long float not null,
-	store_pic bytea,
-	store_taste float,
-	store_environment float,
-	store_service float,
-	primary key(store_id)
+create table restaurants(
+	restaurant_id int not null,
+	restaurant_name varchar(20) not null,
+	-- store_password varchar(40),
+	restaurant_address varchar(100) not null,
+	restaurant_genre varchar(20),
+	restaurant_average float,
+	restaurant_tel varchar(12) not null,
+	restaurant_lat float not null,
+	restaurant_long float not null,
+    restaurant_isFav varchar(5) not null,
+	primary key(restaurant_id)
 );
 
 create table items(
-	store_id int not null,
-	store_name varchar(20) not null,
+	restaurant_id int not null,
+	restaurant_name varchar(20) not null,
 	item_id int not null,
 	item_name varchar(40) not null,
 	item_genre varchar(20),
@@ -43,7 +40,7 @@ create table items(
 	item_environment float,
 	item_service float,
 	primary key(item_id),
-	foreign key(store_id) references stores(store_id)
+	foreign key(restaurant_id) references restaurants(restaurant_id)
 	    on delete cascade on update cascade
 );
 
@@ -59,30 +56,18 @@ create table orders(
 	id serial,
 	order_id int not null,
 	user_id int not null,
-	store_id int not null,
+	restaurant_id int not null,
 	upload_time date,
 	item_id int not null,
 	item_amount int,
 	item_taste int CHECK (item_taste in(1,2,3,4,5)),
 	item_environment int CHECK (item_environment in(1,2,3,4,5)),
 	item_service int CHECK (item_service in(1,2,3,4,5)),
-	foreign key (store_id) references stores(store_id)
+	foreign key (restaurant_id) references restaurants(restaurant_id)
 	    on delete cascade on update cascade,
 	foreign key (user_id) references users(user_id)
 	    on delete cascade on update cascade,
 	foreign key (item_id) references items(item_id)
 	    on delete cascade on update cascade
-);
-
-create table user_events(
-	event_id int not null,
-	user_id int not null,
-	store_id int,
-	event_type varchar(20) not null,
-	primary key (event_id),
-	foreign key (user_id) references users(user_id)
-	    on delete cascade on update cascade,
-	foreign key (store_id) references stores(store_id)
-	    on delete cascade  on update cascade
 );
 

@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Servlet.RestaurantServlet: a servlet deal Restaurant
@@ -24,7 +26,7 @@ public class RestaurantServlet extends HttpServlet {
         boolean isSuccess;
         StoreDao myPOJO=new StoreDao();
 
-        doGet(request, response);
+//        doGet(request, response);
         // Set response header
         response.setContentType(BasicConfig.contentType);
         response.setCharacterEncoding(BasicConfig.encodingType);
@@ -33,6 +35,9 @@ public class RestaurantServlet extends HttpServlet {
         int daoType = Integer.parseInt(request.getParameter(EntityConfig.DAO_TYPE));
 
         // Invoke userRegister(), connect to database and insert user info
+        Map<String, String[]>  m = new HashMap<String, String[]>();
+        m = request.getParameterMap();
+
         switch (daoType){
             case 1:
                 result = myPOJO.getStore();

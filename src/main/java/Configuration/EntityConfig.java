@@ -15,6 +15,6 @@ public class EntityConfig {
     public static final String UPLOAD_TIME = "upload_time";
     public static final String ITEM_AMOUNT = "item_amount";
     public static final String EVENT_TYPE = "event_type";
-    public static final String DAO_TYPE = "dao_type";
+    public static final String DAO_TYPE = "daoType";
 
 }

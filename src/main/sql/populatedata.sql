@@ -2,30 +2,28 @@
 delete from users;
 insert into users values(002269013,'Yi Ren','renyi002269013','1994-09-24','M','2233445567','renyi@gmail.com');
 insert into users values(002276355,'Wentao Lu','luwentao002276355','1990-03-08','M','1122334458','luwentao@gmail.com');
-insert into users values(002268506,'Junjia Lin','linjunjia002268506','1996-08-28','M','1124535449','linjunjia@gmail.com');
-insert into users values(002268087,'Luyun Nie','nieluyun002268087','1990-03-10','F','1224535440','nieluyun@gmail.com');
 insert into users values(002000000,'aaa','aaa','1990-03-10','F','1224535440','aaabbb@gmail.com');
 insert into users values(000000100,'yee','aaa','1990-03-10','F','1224535440','123456@gmail.com');
 
 
-/* Add Stores: 因为缺少实验数据，人均消费栏由商家自行填写 */
-delete from stores;
-insert into stores values(0001,'McDonalds','Mcdonalds0001','110 Rue Queen, Sherbrooke, QC J1M 1J6','Fast Food',13,
-						 '+18195635828',45.36750783294007, -71.85578947857024);
-insert into stores values(0002,'Tim Hortons','timhortons0002','89 Rue Queen, Sherbrooke, QC J1M 1J5','Fast Food',9,
-						 '+18198237007',45.3654632370656, -71.85717677305372);
-insert into stores values(0003,'Sushi King','Sushi King0003','1234 Rue King Ouest, Sherbrooke, QC J1H 1S2','Japanese Style',15,
-						 '+18197912438', 45.39877034787492, -71.90770061538169);
-insert into stores values(0004,'Chez Stanley','Chez Stanley0004','1180 Rue King E, Sherbrooke, QC J1G 1E4','Sports Bar',30,
-						 '+18195623350',45.40812828776601, -71.8627545730523);
-insert into stores values(0005,'Antidote FoodLab','Antidote FoodLab0005','35 Rue Belvédère N suite 10, Sherbrooke, Quebec J1H 4A7',
-						 'Canadian Style',50, '+18197919117', 45.399877868749506, -71.89720360845091);
-insert into stores values(0006,'Chez Freddy Pizzeria','Chez Freddy Pizzeria0006','835 Rue du Conseil, Sherbrooke, QC J1G 3L2',
-						 'Pizza',17,'+18198212248',45.404532386620524, -71.8707963005016);
-insert into stores values(0007,'Sballo','Sballo0007','34 Rue Wellington N, Sherbrooke, QC J1H 5B7','Italian Style',55,
-						  '+18197913559', 45.40284504094125, -71.89058027369387);
-insert into stores values(0008,'Restaurant An Phu','Restaurant An Phu0008','1105 Rue King E, Sherbrooke, QC J1G 1E5',
-						 'Vietnamese Style',20,'+18195691445',45.409081942402146, -71.86470232260079);
+/* Add restaurants: 因为缺少实验数据，人均消费栏由商家自行填写 */
+delete from restaurants;
+insert into restaurants values(0001,'McDonalds','110 Rue Queen, Sherbrooke, QC J1M 1J6','Fast Food',13,
+						 '+18195635828',45.36750783294007, -71.85578947857024, 'T');
+insert into restaurants values(0002,'Tim Hortons','89 Rue Queen, Sherbrooke, QC J1M 1J5','Fast Food',9,
+						 '+18198237007',45.3654632370656, -71.85717677305372, 'F');
+insert into restaurants values(0003,'Sushi King','1234 Rue King Ouest, Sherbrooke, QC J1H 1S2','Japanese Style',15,
+						 '+18197912438', 45.39877034787492, -71.90770061538169, 'F');
+insert into restaurants values(0004,'Chez Stanley','1180 Rue King E, Sherbrooke, QC J1G 1E4','Sports Bar',30,
+						 '+18195623350',45.40812828776601, -71.8627545730523,'T');
+insert into restaurants values(0005,'Antidote FoodLab','35 Rue Belvédère N suite 10, Sherbrooke, Quebec J1H 4A7',
+						 'Canadian Style',50, '+18197919117', 45.399877868749506, -71.89720360845091, 'T');
+insert into restaurants values(0006,'Chez Freddy Pizzeria','835 Rue du Conseil, Sherbrooke, QC J1G 3L2',
+						 'Pizza',17,'+18198212248',45.404532386620524, -71.8707963005016, 'F');
+insert into restaurants values(0007,'Sballo','34 Rue Wellington N, Sherbrooke, QC J1H 5B7','Italian Style',55,
+						  '+18197913559', 45.40284504094125, -71.89058027369387,'T');
+insert into restaurants values(0008,'Restaurant An Phu','1105 Rue King E, Sherbrooke, QC J1G 1E5',
+						 'Vietnamese Style',20,'+18195691445',45.409081942402146, -71.86470232260079,'T');
 
 /* Add Items: 商品分类也由商家自行添加（用于菜单搜索，分类细则会写在platform表格里）*/
 delete from items;
@@ -52,24 +50,17 @@ insert into items values(0008,'Restaurant An Phu',00020,'Sauteed Chicken in Pean
 /* orders*/
 delete from orders;
 /* orders-generate orders*/
-insert into orders values(default,00001,002268087,0007,'2020-09-24',00017,1);
 insert into orders values(default,00002,002276355,0008,'2020-09-24',00018,1);
 insert into orders values(default,00003,002269013,0002,'2020-09-24',00003,2);
 insert into orders values(default,00003,002269013,0002,'2020-09-24',00004,1);
-insert into orders values(default,00004,002268506,0004,'2020-09-24',00008,1);
-insert into orders values(default,00004,002268506,0004,'2020-09-24',00009,1);
 insert into orders values(default,00005,002276355,0001,'2020-09-24',00001,1);
 insert into orders values(default,00006,002276355,0003,'2020-09-24',00006,3);
 insert into orders values(default,00007,002276355,0003,'2020-09-24',00007,1);
 insert into orders values(default,00008,002276355,0005,'2020-09-24',00013,1);
 insert into orders values(default,00009,002276355,0005,'2020-09-24',00012,1);
 insert into orders values(default,00010,002276355,0005,'2020-09-24',00011,2);
-insert into orders values(default,00011,002268087,0008,'2020-09-24',00019,1);
-insert into orders values(default,00012,002268087,0008,'2020-09-24',00018,2);
 insert into orders values(default,00013,002269013,0006,'2020-09-24',00014,2);
-insert into orders values(default,00014,002268506,0001,'2020-09-24',00002,2);
 insert into orders values(default,00015,002269013,0006,'2020-09-24',00015,4);
-insert into orders values(default,00016,002268087,0003,'2020-09-24',00007,1);
 insert into orders values(default,00017,002276355,0007,'2020-09-24',00017,1);
 
 insert into orders values(1,00018,000000100,0007,'2020-09-24',00017,1);
@@ -81,16 +72,6 @@ insert into orders values(1,00020,000000100,0007,'2020-09-24',00017,1);
 insert into orders values(1,00021,000000100,0007,'2020-09-24',00017,4);
 insert into orders values(1,00022,000000100,0007,'2020-09-24',00017,1);
 insert into orders values(2,00022,000000100,0007,'2020-09-24',00017,1);
-
-/* events*/
-delete from user_events;
-insert into user_events values(1, 000000100, 0001, 'STORE');
-insert into user_events values(2, 000000100, 0002, 'STORE');
-insert into user_events values(3, 000000100, 0004, 'STORE');
-insert into user_events values(4, 002268087, 0001, 'STORE');
-insert into user_events values(5, 002268087, 0002, 'STORE');
-insert into user_events values(6, 002268087, 0004, 'STORE');
-insert into user_events values(7, 002268087, 0008, 'STORE');
 
 
 
@@ -143,12 +124,11 @@ update items set item_discount = 0.8
 where item_id = 17;
 
 /* update rate */
-update items set item_taste = 4.1 where store_id = 1;
-update items set item_taste = 4.5 where store_id = 2;
-update items set item_taste = 3.2 where store_id = 3;
-update items set item_taste = 3.5 where store_id = 4;
-update items set item_taste = 3.6 where store_id = 5;
-update items set item_taste = 4.6 where store_id = 6;
-update items set item_taste = 2.8 where store_id = 7;
-update items set item_taste = 2 where store_id = 8;
-
+-- update items set item_taste = 4.1 where store_id = 1;
+-- update items set item_taste = 4.5 where store_id = 2;
+-- update items set item_taste = 3.2 where store_id = 3;
+-- update items set item_taste = 3.5 where store_id = 4;
+-- update items set item_taste = 3.6 where store_id = 5;
+-- update items set item_taste = 4.6 where store_id = 6;
+-- update items set item_taste = 2.8 where store_id = 7;
+-- update items set item_taste = 2 where store_id = 8;
