@@ -25,9 +25,11 @@ public class RegisterDao {
      * @param img img
      * @return if no identical user exists, return success
      */
-    public boolean userRegister(int id, String name, String password, String email, ByteArrayOutputStream img){
-        boolean bool = false;
-        String sqlGetUser = "select * from users where user_id = '"+id+"' ";
+    public int userRegister(String id, String name, String password, String email, ByteArrayOutputStream img){
+        int register = BasicConfig.registerDefault;
+        String sqlGetId = "select * from users where user_id = '"+id+"' ";
+        String sqlGetName = "select * from users where user_name = '"+name+"' ";
+
         String sqlAddUser = "insert into users(user_id, user_name , user_password, user_birthday, user_gender, user_tel," +
                 " user_mail, user_icon) " + "values('"+id+"', '"+name+"','"+password+"', '"+new Date(1994, 9, 24)+"'" +
                 "," + "'M', '8008008888', '"+email+"', '"+img+"')";
@@ -40,13 +42,22 @@ public class RegisterDao {
             properties.setProperty("password", BasicConfig.pwd);
             Connection conn = DriverManager.getConnection(BasicConfig.url, properties);
             Statement stm = conn.createStatement();
-            ResultSet result = stm.executeQuery(sqlGetUser);
-
-            if(!result.next()){
-                stm.execute(sqlAddUser);
-                bool = true;
+            ResultSet resultId = stm.executeQuery(sqlGetId);
+            if(resultId.next()){
+                register = BasicConfig.registerDuplicateId;
+                return register;
             }
-            result.close();
+            ResultSet resultName = stm.executeQuery(sqlGetName);
+
+            if(resultName.next()){
+                register = BasicConfig.registerDuplicateName;
+                return register;
+            }
+            stm.execute(sqlAddUser);
+            register = BasicConfig.registerSuccess;
+
+            resultId.close();
+            resultName.close();
             stm.close();
             conn.close();
         }catch (Exception e) {
@@ -54,7 +65,7 @@ public class RegisterDao {
             System.out.println(e);
         }
 
-        return bool;
+        return register;
     }
 
 }

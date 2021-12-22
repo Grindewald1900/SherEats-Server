@@ -43,4 +43,22 @@ public class DishDao {
         return jsonResult;
     }
 
+    /**
+     * getDish: get dish info by restaurants id
+     * @return jsonResult: result
+     */
+    public String getDishByKeyword(String keyword){
+        String jsonResult = "";
+        String sql = "select * from items where restaurant_name like '%"+keyword+"%'";
+
+        try{
+            jsonResult = ConnectionUtil.getConnectionResult(sql, BasicConfig.executeQuery);
+
+        }catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        return jsonResult;
+    }
+
 }

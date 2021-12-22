@@ -1,9 +1,9 @@
 /* Add Users*/
 delete from users;
-insert into users values(002269013,'Yi Ren','renyi002269013','1994-09-24','M','2233445567','renyi@gmail.com');
-insert into users values(002276355,'Wentao Lu','luwentao002276355','1990-03-08','M','1122334458','luwentao@gmail.com');
-insert into users values(002000000,'aaa','aaa','1990-03-10','F','1224535440','aaabbb@gmail.com');
-insert into users values(000000100,'yee','aaa','1990-03-10','F','1224535440','123456@gmail.com');
+insert into users values('002269013','Yi Ren','renyi002269013','1994-09-24','M','2233445567','renyi@gmail.com');
+insert into users values('002276355','Wentao Lu','luwentao002276355','1990-03-08','M','1122334458','luwentao@gmail.com');
+insert into users values('002000000','aaa','aaa','1990-03-10','F','1224535440','aaabbb@gmail.com');
+insert into users values('000000100','yee','aaa','1990-03-10','F','1224535440','123456@gmail.com');
 
 
 /* Add restaurants: 因为缺少实验数据，人均消费栏由商家自行填写 */
@@ -24,6 +24,33 @@ insert into restaurants values(0007,'Sballo','34 Rue Wellington N, Sherbrooke, Q
 						  '+18197913559', 45.40284504094125, -71.89058027369387,'T');
 insert into restaurants values(0008,'Restaurant An Phu','1105 Rue King E, Sherbrooke, QC J1G 1E5',
 						 'Vietnamese Style',20,'+18195691445',45.409081942402146, -71.86470232260079,'T');
+insert into restaurants values(0009,'Bâton Rouge Steakhouse & Bar','2844 Rue King O, Sherbrooke, QC J1L 1C5',
+						 'Canadian Style',20,'+18193469888',45.397360883078335, -71.94195772279187,'T');
+insert into restaurants values(0010,'Starbucks','2201 Rue King O, Sherbrooke, QC J1J 2G2',
+						 'Coffee',22,'+18195691445',45.39912831981553, -71.92763326114012,'T');
+insert into restaurants values(0011,'Café Dépôt Sherbrooke','Carrefour de l''Estrie, 3050 Boul de Portland, Sherbrooke, QC J1L 1K1',
+						 'Coffee',20,'+18195691445',45.401579876276195, -71.95279212677053,'T');
+insert into restaurants values(0012,'Brasserie Seigneurie, Steakhouse & Bar','14 Rue Léger, Sherbrooke, QC J1L 1W1',
+						 'Canadian Style',20,'+18195691445',45.3866019281863, -71.96373425360962,'T');
+insert into restaurants values(0013,'Caffuccino','4257 Boul Bourque, Sherbrooke, QC J1N 1S4',
+						 'Canadian Style',20,'+18195691445',45.384044325982615, -71.96734517035223,'T');
+insert into restaurants values(0014,'Créme Glacée En Folie','2684 Rue Galt O, Sherbrooke, QC J1K 2X2',
+						 'Canadian Style',20,'+18195691445',45.38698382135774, -71.93945737742932,'T');
+insert into restaurants values(0015,'Au Coin du Vietnam','1530 Rue Galt O, Sherbrooke, QC J1H 2B4',
+						 'Vietnamese Style',20,'+18195691445',45.38706947871017, -71.912783479273,'F');
+insert into restaurants values(0016,'Subway','1515 Rue Dunant, Sherbrooke, QC J1H 5N6',
+						 'Fast Food',20,'+18195691445',45.38364418448974, -71.89949276417899,'T');
+insert into restaurants values(0017,'Domino''s Pizza','1105 Rue  S, Sherbrooke, Quebec J1H 4C8',
+						 'Pizza',25,'+18195691445',45.38982554181572, -71.89630534546536,'T');
+
+
+
+
+
+
+
+
+
 
 /* Add Items: 商品分类也由商家自行添加（用于菜单搜索，分类细则会写在platform表格里）*/
 delete from items;
@@ -50,28 +77,28 @@ insert into items values(0008,'Restaurant An Phu',00020,'Sauteed Chicken in Pean
 /* orders*/
 delete from orders;
 /* orders-generate orders*/
-insert into orders values(default,00002,002276355,0008,'2020-09-24',00018,1);
-insert into orders values(default,00003,002269013,0002,'2020-09-24',00003,2);
-insert into orders values(default,00003,002269013,0002,'2020-09-24',00004,1);
-insert into orders values(default,00005,002276355,0001,'2020-09-24',00001,1);
-insert into orders values(default,00006,002276355,0003,'2020-09-24',00006,3);
-insert into orders values(default,00007,002276355,0003,'2020-09-24',00007,1);
-insert into orders values(default,00008,002276355,0005,'2020-09-24',00013,1);
-insert into orders values(default,00009,002276355,0005,'2020-09-24',00012,1);
-insert into orders values(default,00010,002276355,0005,'2020-09-24',00011,2);
-insert into orders values(default,00013,002269013,0006,'2020-09-24',00014,2);
-insert into orders values(default,00015,002269013,0006,'2020-09-24',00015,4);
-insert into orders values(default,00017,002276355,0007,'2020-09-24',00017,1);
+insert into orders values(default,00002,'002276355',0008,'2020-09-24',00018,1);
+insert into orders values(default,00003,'002269013',0002,'2020-09-24',00003,2);
+insert into orders values(default,00003,'002269013',0002,'2020-09-24',00004,1);
+insert into orders values(default,00005,'002276355',0001,'2020-09-24',00001,1);
+insert into orders values(default,00006,'002276355',0003,'2020-09-24',00006,3);
+insert into orders values(default,00007,'002276355',0003,'2020-09-24',00007,1);
+insert into orders values(default,00008,'002276355',0005,'2020-09-24',00013,1);
+insert into orders values(default,00009,'002276355',0005,'2020-09-24',00012,1);
+insert into orders values(default,00010,'002276355',0005,'2020-09-24',00011,2);
+insert into orders values(default,00013,'002269013',0006,'2020-09-24',00014,2);
+insert into orders values(default,00015,'002269013',0006,'2020-09-24',00015,4);
+insert into orders values(default,00017,'002276355',0007,'2020-09-24',00017,1);
 
-insert into orders values(1,00018,000000100,0007,'2020-09-24',00017,1);
-insert into orders values(2,00018,000000100,0008,'2020-09-24',00018,2);
-insert into orders values(3,00018,000000100,0002,'2020-09-24',00003,1);
-insert into orders values(1,00019,000000100,0004,'2020-09-24',00009,1);
-insert into orders values(2,00019,000000100,0007,'2020-09-24',00017,3);
-insert into orders values(1,00020,000000100,0007,'2020-09-24',00017,1);
-insert into orders values(1,00021,000000100,0007,'2020-09-24',00017,4);
-insert into orders values(1,00022,000000100,0007,'2020-09-24',00017,1);
-insert into orders values(2,00022,000000100,0007,'2020-09-24',00017,1);
+insert into orders values(1,00018,'000000100',0007,'2020-09-24',00017,1);
+insert into orders values(2,00018,'000000100',0008,'2020-09-24',00018,2);
+insert into orders values(3,00018,'000000100',0002,'2020-09-24',00003,1);
+insert into orders values(1,00019,'000000100',0004,'2020-09-24',00009,1);
+insert into orders values(2,00019,'000000100',0007,'2020-09-24',00017,3);
+insert into orders values(1,00020,'000000100',0007,'2020-09-24',00017,1);
+insert into orders values(1,00021,'000000100',0007,'2020-09-24',00017,4);
+insert into orders values(1,00022,'000000100',0007,'2020-09-24',00017,1);
+insert into orders values(2,00022,'000000100',0007,'2020-09-24',00017,1);
 
 
 

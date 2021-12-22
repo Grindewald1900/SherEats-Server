@@ -15,6 +15,13 @@ public class BasicConfig {
     public static final int executeQuery = 101;
     public static final int executeUpdate = 102;
 
+    public static final int registerDefault = 200; // Default, fail
+    public static final int registerSuccess = 201; // Success
+    public static final int registerDuplicateId = 202; // Duplicated ID
+    public static final int registerDuplicateName = 203; // Duplicated Name
+
+
+
     //Database
     public static final String Restaurant = "restaurants";
 

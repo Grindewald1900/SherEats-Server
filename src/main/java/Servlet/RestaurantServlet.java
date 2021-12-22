@@ -23,10 +23,8 @@ public class RestaurantServlet extends HttpServlet {
         System.out.println("Servlet.RestaurantServlet");
         // The result to be return
         String result = "";
-        boolean isSuccess;
         StoreDao myPOJO=new StoreDao();
 
-//        doGet(request, response);
         // Set response header
         response.setContentType(BasicConfig.contentType);
         response.setCharacterEncoding(BasicConfig.encodingType);

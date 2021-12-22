@@ -40,5 +40,6 @@
     </orderEntry>
     <orderEntry type="library" exported="" name="postgresql-42.2.19" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20210307" level="project" />
+    <orderEntry type="library" name="com.google.code.gson:gson:2.8.9" level="project" />
   </component>
 </module>

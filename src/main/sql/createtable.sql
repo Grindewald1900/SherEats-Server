@@ -1,7 +1,7 @@
 DROP table users, restaurants, items, orders;
 
 create table users(
-	user_id int not null,
+	user_id varchar not null,
 	user_name varchar(20) not null,
 	user_password varchar(40) not null,
 	user_birthday date not null,
@@ -15,7 +15,7 @@ create table users(
 
 create table restaurants(
 	restaurant_id int not null,
-	restaurant_name varchar(20) not null,
+	restaurant_name varchar(50) not null,
 	-- store_password varchar(40),
 	restaurant_address varchar(100) not null,
 	restaurant_genre varchar(20),
@@ -29,7 +29,7 @@ create table restaurants(
 
 create table items(
 	restaurant_id int not null,
-	restaurant_name varchar(20) not null,
+	restaurant_name varchar(50) not null,
 	item_id int not null,
 	item_name varchar(40) not null,
 	item_genre varchar(20),
@@ -55,7 +55,7 @@ create table items(
 create table orders(
 	id serial,
 	order_id int not null,
-	user_id int not null,
+	user_id varchar not null,
 	restaurant_id int not null,
 	upload_time date,
 	item_id int not null,

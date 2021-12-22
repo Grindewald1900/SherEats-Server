@@ -34,7 +34,11 @@ public class DishServlet extends HttpServlet {
             System.out.println("ID" + request.getParameter(EntityConfig.ID));
             result = myPOJO.getDishById(Integer.parseInt(request.getParameter(EntityConfig.ID)));
         }else {
-            result = myPOJO.getDish();
+            if(!request.getParameter(EntityConfig.KEYWORD).equals("")){
+                result = myPOJO.getDishByKeyword(request.getParameter(EntityConfig.KEYWORD));
+            }else {
+                result = myPOJO.getDish();
+            }
         }
 
         // Invoke userRegister(), connect to database and insert user info
