@@ -20,22 +20,29 @@ public class DishServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("Servlet.DishServlet");
         // The result to be return
-        String result;
-        boolean isSuccess;
+        String result, keyword;
+        boolean isRestaurant, isDish, isCuisine, isLocation, isAll;
         DishDao myPOJO=new DishDao();
 
         doGet(request, response);
         // Set response header
         response.setContentType(BasicConfig.contentType);
         response.setCharacterEncoding(BasicConfig.encodingType);
+        isRestaurant = Boolean.parseBoolean(request.getParameter(EntityConfig.TYPE_RESTAURANT));
+        isDish = Boolean.parseBoolean(request.getParameter(EntityConfig.TYPE_DISH));
+        isCuisine = Boolean.parseBoolean(request.getParameter(EntityConfig.TYPE_CUISINE));
+        isLocation = Boolean.parseBoolean(request.getParameter(EntityConfig.TYPE_LOCATION));
+        isAll = Boolean.parseBoolean(request.getParameter(EntityConfig.TYPE_ALL));
+        keyword = request.getParameter(EntityConfig.KEYWORD);
+
 
         // Get parameters from url data
         if(Integer.parseInt(request.getParameter(EntityConfig.ID)) > 0){
             System.out.println("ID" + request.getParameter(EntityConfig.ID));
             result = myPOJO.getDishById(Integer.parseInt(request.getParameter(EntityConfig.ID)));
         }else {
-            if(!request.getParameter(EntityConfig.KEYWORD).equals("")){
-                result = myPOJO.getDishByKeyword(request.getParameter(EntityConfig.KEYWORD));
+            if(!keyword.equals("")){
+                result = myPOJO.getDishByKeyword(keyword, isRestaurant, isDish, isCuisine, isLocation, isAll);
             }else {
                 result = myPOJO.getDish();
             }

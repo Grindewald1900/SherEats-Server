@@ -18,4 +18,10 @@ public class EntityConfig {
     public static final String EVENT_TYPE = "event_type";
     public static final String DAO_TYPE = "daoType";
 
+    public static final String TYPE_RESTAURANT = "typeRestaurant";
+    public static final String TYPE_DISH = "typeDish";
+    public static final String TYPE_CUISINE = "typeCuisine";
+    public static final String TYPE_LOCATION = "typeLocation";
+    public static final String TYPE_ALL = "typeAll";
+
 }
