@@ -2,10 +2,10 @@
   <artifact type="exploded-war" name="BU:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/BU_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="BU/web/Web" />
+      <element id="javaee-facet-resources" facet="Shereats/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="BU" />
+          <element id="module-output" name="Shereats" />
         </element>
       </element>
     </root>

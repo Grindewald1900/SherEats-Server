@@ -54,85 +54,124 @@ insert into restaurants values(0017,'Domino''s Pizza','1105 Rue  S, Sherbrooke, 
 
 /* Add Items: 商品分类也由商家自行添加（用于菜单搜索，分类细则会写在platform表格里）*/
 delete from items;
-insert into items values(0001,'McDonalds',00001,'Big Mac Bacon','burger',10);
-insert into items values(0001,'McDonalds',00002,'Double Western BBQ Quarter Pounder','burger',12.02);
-insert into items values(0002,'Tim Hortons',00003,'Brewed Coffee','coffee',1.76);
-insert into items values(0002,'Tim Hortons',00004,'Crispy Chicken Sandwich','sandwish',3.98);
-insert into items values(0002,'Tim Hortons',00005,'Beef Burger','burger',4.99);
-insert into items values(0003,'Sushi King',00006,'Salmon Sushi 6 pcs','sushi',5.95);
-insert into items values(0003,'Sushi King',00007,'Mix Salade','salade',7.75);
-insert into items values(0004,'Chez Stanley',00008,'Salade grecque','salade',15);
-insert into items values(0004,'Chez Stanley',00009,'Pepsi','beverage',2.50);
-insert into items values(0004,'Chez Stanley',00010,'Stanly Pizza','pizza',17.49);
-insert into items values(0005,'Antidote FoodLab',00011,'Salmon','fish dishes',28);
-insert into items values(0005,'Antidote FoodLab',00012,'Duck Breast','duck dishes',35);
-insert into items values(0005,'Antidote FoodLab',00013,'Toscana Pietranera 2018, Piaggia','wine',130);
-insert into items values(0006,'Chez Freddy Pizzeria',00014,'Italian Pizza','pizza',15.99);
-insert into items values(0006,'Chez Freddy Pizzeria',00015,'Club Sandwish','sandwish',13.99);
-insert into items values(0007,'Sballo',00016,'Carnaroli Risotto Seafood','seafood dishes',38);
-insert into items values(0007,'Sballo',00017,'Filettino di bue del Conte','beef dishes',42);
-insert into items values(0008,'Restaurant An Phu',00018,'Chicken Fried','chicken dishes',18);
-insert into items values(0008,'Restaurant An Phu',00019,'Fried Noodle','noodle/pasta',18);
-insert into items values(0008,'Restaurant An Phu',00020,'Sauteed Chicken in Peanut Sauce','chicken dishes',17);
+insert into items (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0001,'McDonalds',00001,'Big Mac Bacon','burger',10, 4.1);
+insert into items (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0001,'McDonalds',00002,'Double Western BBQ Quarter Pounder','burger',12.02, 3.9);
+insert into items (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0002,'Tim Hortons',00003,'Brewed Coffee','coffee',1.76, 4.2);
+insert into items (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0002,'Tim Hortons',00004,'Crispy Chicken Sandwich','sandwish',3.98, 5.0);
+insert into items (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0002,'Tim Hortons',00005,'Beef Burger','burger',4.99, 4.6);
+insert into items (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0003,'Sushi King',00006,'Salmon Sushi 6 pcs','sushi',5.95, 3.4);
+insert into items  (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0003,'Sushi King',00007,'Mix Salade','salade',7.75, 3.2);
+insert into items (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0004,'Chez Stanley',00008,'Salade grecque','salade',15, 3.8);
+insert into items  (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0004,'Chez Stanley',00009,'Pepsi','beverage',2.50, 2.8);
+insert into items  (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0004,'Chez Stanley',00010,'Stanly Pizza','pizza',17.49, 3.9);
+insert into items  (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0005,'Antidote FoodLab',00011,'Salmon','fish dishes',28, 2.4);
+insert into items  (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0005,'Antidote FoodLab',00012,'Duck Breast','duck dishes',35, 3.6);
+insert into items  (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0005,'Antidote FoodLab',00013,'Toscana Pietranera 2018, Piaggia','wine',130, 4.5);
+insert into items  (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0006,'Chez Freddy Pizzeria',00014,'Italian Pizza','pizza',15.99, 4.7);
+insert into items  (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0006,'Chez Freddy Pizzeria',00015,'Club Sandwish','sandwish',13.99, 4.2);
+insert into items  (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0007,'Sballo',00016,'Carnaroli Risotto Seafood','seafood dishes',38, 3.8);
+insert into items  (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0007,'Sballo',00017,'Filettino di bue del Conte','beef dishes',42, 2.0);
+insert into items  (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0008,'Restaurant An Phu',00018,'Chicken Fried','chicken dishes',18, 2.3);
+insert into items  (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0008,'Restaurant An Phu',00019,'Fried Noodle','noodle/pasta',18, 1.8);
+insert into items  (restaurant_id, restaurant_name, item_id, item_name, item_genre, item_price, item_taste)
+values(0008,'Restaurant An Phu',00020,'Sauteed Chicken in Peanut Sauce','chicken dishes',17, 4.9);
+
+
 /* orders*/
-delete from orders;
+-- delete from orders;
 /* orders-generate orders*/
-insert into orders values(default,00002,'002276355',0008,'2020-09-24',00018,1);
-insert into orders values(default,00003,'002269013',0002,'2020-09-24',00003,2);
-insert into orders values(default,00003,'002269013',0002,'2020-09-24',00004,1);
-insert into orders values(default,00005,'002276355',0001,'2020-09-24',00001,1);
-insert into orders values(default,00006,'002276355',0003,'2020-09-24',00006,3);
-insert into orders values(default,00007,'002276355',0003,'2020-09-24',00007,1);
-insert into orders values(default,00008,'002276355',0005,'2020-09-24',00013,1);
-insert into orders values(default,00009,'002276355',0005,'2020-09-24',00012,1);
-insert into orders values(default,00010,'002276355',0005,'2020-09-24',00011,2);
-insert into orders values(default,00013,'002269013',0006,'2020-09-24',00014,2);
-insert into orders values(default,00015,'002269013',0006,'2020-09-24',00015,4);
-insert into orders values(default,00017,'002276355',0007,'2020-09-24',00017,1);
+-- insert into orders values(default,00002,'002276355',0008,'2020-09-24',00018,1);
+-- insert into orders values(default,00003,'002269013',0002,'2020-09-24',00003,2);
+-- insert into orders values(default,00003,'002269013',0002,'2020-09-24',00004,1);
+-- insert into orders values(default,00005,'002276355',0001,'2020-09-24',00001,1);
+-- insert into orders values(default,00006,'002276355',0003,'2020-09-24',00006,3);
+-- insert into orders values(default,00007,'002276355',0003,'2020-09-24',00007,1);
+-- insert into orders values(default,00008,'002276355',0005,'2020-09-24',00013,1);
+-- insert into orders values(default,00009,'002276355',0005,'2020-09-24',00012,1);
+-- insert into orders values(default,00010,'002276355',0005,'2020-09-24',00011,2);
+-- insert into orders values(default,00013,'002269013',0006,'2020-09-24',00014,2);
+-- insert into orders values(default,00015,'002269013',0006,'2020-09-24',00015,4);
+-- insert into orders values(default,00017,'002276355',0007,'2020-09-24',00017,1);
+--
+-- insert into orders values(1,00018,'000000100',0007,'2020-09-24',00017,1);
+-- insert into orders values(2,00018,'000000100',0008,'2020-09-24',00018,2);
+-- insert into orders values(3,00018,'000000100',0002,'2020-09-24',00003,1);
+-- insert into orders values(1,00019,'000000100',0004,'2020-09-24',00009,1);
+-- insert into orders values(2,00019,'000000100',0007,'2020-09-24',00017,3);
+-- insert into orders values(1,00020,'000000100',0007,'2020-09-24',00017,1);
+-- insert into orders values(1,00021,'000000100',0007,'2020-09-24',00017,4);
+-- insert into orders values(1,00022,'000000100',0007,'2020-09-24',00017,1);
+-- insert into orders values(2,00022,'000000100',0007,'2020-09-24',00017,1);
 
-insert into orders values(1,00018,'000000100',0007,'2020-09-24',00017,1);
-insert into orders values(2,00018,'000000100',0008,'2020-09-24',00018,2);
-insert into orders values(3,00018,'000000100',0002,'2020-09-24',00003,1);
-insert into orders values(1,00019,'000000100',0004,'2020-09-24',00009,1);
-insert into orders values(2,00019,'000000100',0007,'2020-09-24',00017,3);
-insert into orders values(1,00020,'000000100',0007,'2020-09-24',00017,1);
-insert into orders values(1,00021,'000000100',0007,'2020-09-24',00017,4);
-insert into orders values(1,00022,'000000100',0007,'2020-09-24',00017,1);
-insert into orders values(2,00022,'000000100',0007,'2020-09-24',00017,1);
+/**
+ badges
+ */
+insert into badges values('000000100', 00001, 01, 1, '[Lv1] First top up', '2021-01-01', 1);
+insert into badges values('000000100', 00002, 02, 2, '[Lv1] Peace and love', '2021-02-01', 1);
+insert into badges values('000000100', 00003, 03, 3, '[Lv2] All correct', '2021-03-01', 2);
+insert into badges values('000000100', 00004, 04, 4, '[Lv1] Ecological volunteer', '2021-04-01', 1);
+insert into badges values('000000100', 00005, 05, 5, '[Lv1] 100% Guarantee', '2021-05-01', 1);
+insert into badges values('000000100', 00006, 06, 6, '[Lv3] Amazing', '2021-06-01', 3);
+insert into badges values('000000100', 00007, 07, 7, '[Lv1] Sunshine and beach', '2021-07-01', 1);
+insert into badges values('000000100', 00008, 08, 8, '[Lv1] Rock star', '2021-08-01', 1);
+insert into badges values('000000100', 00009, 09, 9, '[Lv4] Lifetime learning', '2021-09-01', 4);
+insert into badges values('000000100', 00010, 01, 10, '[Lv1] First top up', '2021-09-03', 1);
+insert into badges values('000000100', 00011, 03, 11, '[Lv2] All correct', '2021-09-06', 2);
+insert into badges values('000000100', 00012, 06, 12, '[Lv3] Amazing', '2021-10-01', 3);
+insert into badges values('000000100', 00013, 09, 13, '[Lv4] Lifetime learning', '2021-11-11', 4);
 
 
 
 
-update orders set item_taste=5, item_environment=3, item_service=4
-where order_id = 00001 and item_id = 00017;
-update orders set item_taste=5, item_environment=5, item_service=4
-where order_id = 00003 and item_id = 00003;
-update orders set item_taste=4, item_environment=5, item_service=5
-where order_id = 00003 and item_id = 00004;
-update orders set item_taste=3, item_environment=4, item_service=5
-where order_id = 00004 and item_id = 00009;
-update orders set item_taste=4, item_environment=5, item_service=5
-where order_id = 00005 and item_id = 00001;
-update orders set item_taste=4, item_environment=5, item_service=3
-where order_id = 00007 and item_id = 00007;
-update orders set item_taste=5, item_service=2
-where order_id = 00008 and item_id = 00013;
-update orders set item_taste=4, item_environment=5, item_service=5
-where order_id = 00010 and item_id = 00011;
-update orders set item_environment=5, item_service=5
-where order_id = 00012 and item_id = 00018;
-update orders set item_taste=3,item_environment=4, item_service=5
-where order_id = 00011 and item_id = 00019;
-update orders set item_taste=5,item_environment=4, item_service=4
-where order_id = 00014 and item_id = 00002;
-update orders set item_taste=5,item_environment=5, item_service=5
-where order_id = 00015 and item_id = 00015;
-update orders set item_taste=5
-where order_id = 00009 and item_id = 00012;
-update orders set item_service=5
-where order_id = 00002 and item_id = 00018;
-update orders set item_taste=5, item_environment=5, item_service=5
-where order_id = 00017 and item_id = 00017;
+-- update orders set item_taste=5, item_environment=3, item_service=4
+-- where order_id = 00001 and item_id = 00017;
+-- update orders set item_taste=5, item_environment=5, item_service=4
+-- where order_id = 00003 and item_id = 00003;
+-- update orders set item_taste=4, item_environment=5, item_service=5
+-- where order_id = 00003 and item_id = 00004;
+-- update orders set item_taste=3, item_environment=4, item_service=5
+-- where order_id = 00004 and item_id = 00009;
+-- update orders set item_taste=4, item_environment=5, item_service=5
+-- where order_id = 00005 and item_id = 00001;
+-- update orders set item_taste=4, item_environment=5, item_service=3
+-- where order_id = 00007 and item_id = 00007;
+-- update orders set item_taste=5, item_service=2
+-- where order_id = 00008 and item_id = 00013;
+-- update orders set item_taste=4, item_environment=5, item_service=5
+-- where order_id = 00010 and item_id = 00011;
+-- update orders set item_environment=5, item_service=5
+-- where order_id = 00012 and item_id = 00018;
+-- update orders set item_taste=3,item_environment=4, item_service=5
+-- where order_id = 00011 and item_id = 00019;
+-- update orders set item_taste=5,item_environment=4, item_service=4
+-- where order_id = 00014 and item_id = 00002;
+-- update orders set item_taste=5,item_environment=5, item_service=5
+-- where order_id = 00015 and item_id = 00015;
+-- update orders set item_taste=5
+-- where order_id = 00009 and item_id = 00012;
+-- update orders set item_service=5
+-- where order_id = 00002 and item_id = 00018;
+-- update orders set item_taste=5, item_environment=5, item_service=5
+-- where order_id = 00017 and item_id = 00017;123456
 
 -- delete from useraccountrecord;
 -- insert into useraccountrecord values(002276355,'change password','2021-03-21','08:00:00','change password into 12345');

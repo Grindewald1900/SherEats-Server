@@ -1,4 +1,4 @@
-DROP table users, restaurants, items, orders;
+DROP table users, restaurants, items, orders, badges;
 
 create table users(
 	user_id varchar not null,
@@ -44,6 +44,20 @@ create table items(
 	    on delete cascade on update cascade
 );
 
+create table badges(
+    user_id varchar not null,
+    badge_id int not null,
+    badge_type int not null,
+    badge_sequence int not null,
+    badge_content varchar(100),
+    badge_date varchar(20),
+    badge_rarity int not null,
+    primary key(badge_id),
+    foreign key(user_id) references users(user_id)
+	    on delete cascade on update cascade
+);
+
+
 -- create table order_item(
 -- 	id int not null
 -- 	item_id int
@@ -53,16 +67,20 @@ create table items(
 -- );
 
 create table orders(
-	id serial,
-	order_id int not null,
+	id varchar not null,
+	order_id varchar not null,
 	user_id varchar not null,
 	restaurant_id int not null,
-	upload_time date,
+	upload_time varchar,
+	order_price float not null,
 	item_id int not null,
 	item_amount int,
 	item_taste int CHECK (item_taste in(1,2,3,4,5)),
 	item_environment int CHECK (item_environment in(1,2,3,4,5)),
 	item_service int CHECK (item_service in(1,2,3,4,5)),
+	item_name varchar(40) not null,
+	restaurant_name varchar(50) not null,
+	primary key(id),
 	foreign key (restaurant_id) references restaurants(restaurant_id)
 	    on delete cascade on update cascade,
 	foreign key (user_id) references users(user_id)

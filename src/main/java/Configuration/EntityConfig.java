@@ -24,4 +24,10 @@ public class EntityConfig {
     public static final String TYPE_LOCATION = "typeLocation";
     public static final String TYPE_ALL = "typeAll";
 
+    // States
+    public static final int STATE_NULL = -1;
+    public static final int  STATE_SUCCESS = 1;
+    public static final int  STATE_FAIL = 2;
+    public static final int  STATE_CANCEL = 3;
+
 }

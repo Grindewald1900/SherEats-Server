@@ -65,4 +65,14 @@
         <url-pattern>/Servlet.EventServlet.do</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>BadgeServlet</servlet-name>
+        <servlet-class>Servlet.BadgeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>BadgeServlet</servlet-name>
+        <url-pattern>/Servlet.BadgeServlet.do</url-pattern>
+    </servlet-mapping>
+
 </web-app>

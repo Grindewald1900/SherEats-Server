@@ -71,7 +71,6 @@ public class DishDao {
                 sql = sql.concat(" item_genre like '%"+keyword+"%'");
             }
         }
-
         try{
             System.out.println(sql);
             jsonResult = ConnectionUtil.getConnectionResult(sql, BasicConfig.executeQuery);
